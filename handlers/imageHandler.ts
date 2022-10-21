@@ -1,9 +1,5 @@
-// import { RequestHandler } from "express";
 import { Request, Response, NextFunction } from "express";
-// import {
-//   imageHandlerRequest as IReq,
-//   // imageHandlerResponse as IRes,
-// } from "../api";
+
 import { resizeImage } from "../util/sharp";
 import { getOriginImg } from "../util/getOriginImg";
 import path from "path";
