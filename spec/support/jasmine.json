@@ -1,0 +1,13 @@
+{
+  "spec_files": ["**/*.test.ts"],
+
+  "env": {
+    "failSpecWithNoExpectations": false,
+
+    "stopSpecOnExpectationFailure": false,
+
+    "stopOnSpecFailure": false,
+
+    "random": false
+  }
+}
