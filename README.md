@@ -1,3 +1,4 @@
 # udacity-Image-Processing
 
-- ### ***npm i***  to install all dependencies
+### install all dependencies
+#### ***npm i*** 
