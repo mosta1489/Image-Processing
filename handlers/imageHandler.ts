@@ -1,5 +1,4 @@
 import { RequestHandler } from "express";
-// import { promises as fs } from "fs";
 import {
   imageHandlerRequest as IReq,
   // imageHandlerResponse as IRes,
@@ -12,11 +11,22 @@ export const imageHandler: RequestHandler<IReq, any> = async (
   req,
   res,
   next
-) => {
-  const { filename, width, height } = req.query;
+): Promise<void> => {
+  const filename = req.query.filename;
 
-  if (!filename || !width || !height || typeof filename != "string") {
-    return next("error");
+  if (!filename || !req.query.width || !req.query.height) {
+    return next("missing values. filename , width and height are required");
+  }
+  const allNames = ["fjord", "encenadaport", "palmtunnel", " santamonica"];
+  if (typeof filename !== "string" || !allNames.includes(filename)) {
+    return next(`Invalid input. filename must be from these names
+    [ fjord, encenadaport, palmtunnel, santamonica ] `);
+  }
+
+  const width = Number(req.query.width);
+  const height = Number(req.query.height);
+  if (width < 1 || height < 1) {
+    return next("Invalid input. width and height must be a positive number ");
   }
 
   try {
@@ -27,8 +37,8 @@ export const imageHandler: RequestHandler<IReq, any> = async (
     const newImagePath = await resizeImage(
       String(filename),
       image,
-      +width,
-      +height
+      width,
+      height
     );
 
     res.status(200).sendFile(path.join(__dirname, "../", newImagePath));
