@@ -13,7 +13,7 @@
     localhost:3000
 
 #### to resize image
-    /api?filename=___imagename___&width=___number___&height=___number___
+    /api?filename=<imagenam>&width=<number>&height=<number>
 
 ##### user only these imagename 
-    [encenadaport, fjord, encenadaport, palmtunnel, santamonica]
+    encenadaport   fjord   encenadaport   palmtunnel   santamonica
