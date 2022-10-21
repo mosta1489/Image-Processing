@@ -1,16 +1,17 @@
-import { RequestHandler } from "express";
-import {
-  imageHandlerRequest as IReq,
-  // imageHandlerResponse as IRes,
-} from "../api";
+// import { RequestHandler } from "express";
+import { Request, Response, NextFunction } from "express";
+// import {
+//   imageHandlerRequest as IReq,
+//   // imageHandlerResponse as IRes,
+// } from "../api";
 import { resizeImage } from "../util/sharp";
 import { getOriginImg } from "../util/getOriginImg";
 import path from "path";
 
-export const imageHandler: RequestHandler<IReq, any> = async (
-  req,
-  res,
-  next
+export const imageHandler = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
 ): Promise<void> => {
   const filename = req.query.filename;
 
