@@ -8,7 +8,8 @@ to run the server ___npm start___
 
 server is running at ___localhost:3000___
 
-to resize image
+###### to resize image
 /api?filename=___imagename___&width=___number___&height=___number___
 
-#### user only these imagename ___[encenadaport, fjord, encenadaport, palmtunnel, santamonica]___
+user only these imagename 
+#####[encenadaport, fjord, encenadaport, palmtunnel, santamonica]
