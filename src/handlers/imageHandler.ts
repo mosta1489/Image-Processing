@@ -38,7 +38,7 @@ export const imageHandler = async (
       height
     );
 
-    res.status(200).sendFile(path.join(__dirname, "../", newImagePath));
+    res.status(200).sendFile(path.join(__dirname, "../../", newImagePath));
   } catch (error) {
     return next(error);
   }

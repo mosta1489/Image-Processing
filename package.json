@@ -4,10 +4,11 @@
   "description": "",
   "main": "server.ts",
   "scripts": {
-    "test": "ts-node node_modules/jasmine/bin/jasmine",
-    "start": "ts-node server.ts",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "build": "npx tsc ",
+    "test": "npx tsc & node node_modules/jasmine/bin/jasmine",
+    "start": "npx tsc & node ./build/server.js",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
     "prettier-format": "prettier --config .prettierrc . --write"
   },
   "keywords": [],
